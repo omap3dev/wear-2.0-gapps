@@ -1,0 +1,10 @@
+ui_print("*******************************************");
+ui_print("*         Installing AW 2.0 Gapps         *");
+ui_print("*******************************************");
+show_progress(0.2, 1);
+run_program("/sbin/sleep", "2");
+run_program("/sbin/busybox", "mount", "/system");
+package_extract_dir("system", "/system");
+run_program("/sbin/busybox", "umount", "/system"); 
+show_progress(1, 1);
+ui_print("Finished");
